@@ -42,9 +42,8 @@ var AppView = function(model){
   this.start = function(){
     AppView.interval = setInterval(
       function(){
-        AppView.renderToConsole()
-        AppView.model.checkCollision()
-        AppView.model.movePieceDown()
+        AppView.renderToConsole();
+        AppView.model.startPieceIteration();
       },
       1000
     );
@@ -55,8 +54,8 @@ var AppView = function(model){
   }
 
   this.renderToConsole = function(){
-    console.log(Math.random(100));
     var state = AppView.model.currentState;
+    console.log('-------------');
     for (row in state){
       console.log(state[row]);
     }

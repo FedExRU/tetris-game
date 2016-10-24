@@ -1,8 +1,8 @@
 ;
 'use strict';
 
-var AppView = function(model){
-  var AppView = this;
+var View = function(model){
+  var View = this;
 
   this.model = model;
   this.ctx;
@@ -18,7 +18,7 @@ var AppView = function(model){
   this.cellsize = 40;
 
   this.init = function(){
-    AppView.start();
+    View.start();
   };
 
   this.renderBoard = function () {
@@ -40,21 +40,21 @@ var AppView = function(model){
   };
 
   this.start = function(){
-    AppView.interval = setInterval(
+    View.interval = setInterval(
       function(){
-        AppView.renderToConsole();
-        AppView.model.startPieceIteration();
+        View.renderToConsole();
+        View.model.startPieceIteration();
       },
-      1000
+      500
     );
   }
 
   this.stop = function(){
-    AppView.clearInterval();
+    View.clearInterval();
   }
 
   this.renderToConsole = function(){
-    var state = AppView.model.currentState;
+    var state = View.model.currentState;
     console.log('-------------');
     for (row in state){
       console.log(state[row]);

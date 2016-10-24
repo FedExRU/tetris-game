@@ -4,11 +4,9 @@
 (new function() {
   var App = this;
   this.files = [
-    'js/AppController.js',
-    'js/AppModel.js',
-    'js/AppView.js',
-    'js/GameLocation.js',
-    'js/GamePattern.js',
+    'js/Controller.js',
+    'js/Model.js',
+    'js/View.js',
     'js/lib.js',
     'js/mouseController.js'];
   this.model;
@@ -16,11 +14,11 @@
   this.controller;
 
   this.init = function() {
-    this.model = new AppModel();
-    this.view  = new AppView(this.model);
-    this.controller = new AppController(this.model, this.view);
-    view.renderBoard();
-    // view.renderToConsole();
+    this.model = new Model();
+    this.view  = new View(this.model);
+    this.controller = new Controller(this.model, this.view);
+    // view.renderBoard();
+    view.renderToConsole();
   };
 
   return function() {

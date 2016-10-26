@@ -17,7 +17,7 @@
     this.model = new Model();
     this.view  = new View(this.model);
     this.controller = new Controller(this.model, this.view);
-    // view.renderBoard();
+    view.renderBoard();
     view.renderToConsole();
   };
 
